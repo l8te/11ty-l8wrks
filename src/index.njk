@@ -1,0 +1,24 @@
+---
+title: "11ty x Bragdocs"
+layout: "layouts/base.njk"
+---
+
+<div class="bragdoc__section" id="bragdoc__section">
+<h1 class="bragdoc__header">{{ title }}</h1>
+<div class="bragdoc__container">
+  <div class="bragdoc__profile">
+    <img class="bragdoc__photo" src="{{ '/images/lee.jpg' | url }}">
+    <h1 class="bragdoc__name">{{ data.myname }}</h1>
+    <div class="role">{{ data.myrole }}</div>
+  </div>
+
+{% for brag in collections.brags | reverse %}
+  {% if brag.data.public %}
+    {% include 'partials/bragdoc-entry.njk' %}
+  {% endif %}
+{% endfor %}
+  </div>
+  <footer>
+    {% include 'partials/credits.njk' %}
+  </footer>
+</div>
