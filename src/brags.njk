@@ -1,6 +1,7 @@
 ---
-title: "11ty x Bragdocs"
+title: "brag document"
 layout: "layouts/base.njk"
+permalink: "brags/"
 ---
 
 <div class="bragdoc__section" id="bragdoc__section">
@@ -10,7 +11,6 @@ layout: "layouts/base.njk"
     <img class="bragdoc__photo" src="{{ '/images/lee.jpg' | url }}">
     <h1 class="bragdoc__name">{{ data.myname }}</h1>
     <div class="role">{{ data.myrole }}</div>
-  </div>
 
 {% for brag in collections.brags | reverse %}
   {% if brag.data.public %}
