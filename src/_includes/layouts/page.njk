@@ -1,0 +1,13 @@
+---
+layout: "layouts/base.njk"
+---
+
+<time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+<br/>
+{{ content | safe }}
+<img src="../../images/{{ imageName }}" alt="{{ description }}" width="600px">
+
+{% for tag in tags %}
+	{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+	<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+{% endfor %}

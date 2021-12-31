@@ -4,17 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    {# need to update css to expand to the whole site #}
-    {# <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"> #}
+    <title>Art</title>
+    
+    
 </head>
 
 <body>
-  {% include 'partials/nav.njk' %}
-    <h1 class="bragdoc__header">{{ title }}</h1>
-    {{ content | safe }}
+  <header>
+    <h1 class="home"><a href="/">latewerks</a></h1>
+    <ul class="nav">
+      <li class="nav-item"><a href="/">Home</a></li>
+      <li class="nav-item nav-item-active"><a href="/art/">Art</a></li>
+      <li class="nav-item"><a href="/projects/">Projects</a></li>
+      <li class="nav-item"><a href="/about/">About</a></li>
+    </ul>
+</header>
+    <h1 class="bragdoc__header">Art</h1>
+    
+Partials for galleries
 
-    {# open external links in new tabs #}
+    
     <script>
     (function () {
       const links = document.querySelectorAll("a[href^='https://'], a[href^='http://']")
@@ -31,5 +40,7 @@
     })()
     </script>
 </body>
-    {% include 'partials/footer.njk' %}
+    <footer>
+	<p>footer goes here</p>
+</footer>
 </html>

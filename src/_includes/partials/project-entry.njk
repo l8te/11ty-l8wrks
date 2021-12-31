@@ -1,0 +1,14 @@
+<div>
+    <ul>
+        <li class="postlist-item{% if project.url == url %} projectlist-item-active{% endif %}">
+            <a href="{{ project.url | url }}" class="postlist-link">{% if project.data.title %}{{ project.data.title }}{% else %}<code>{{ project.url }}</code>{% endif %}</a>
+            <p>{{ project.data.description | safe }}</p>
+            <time datetime="{{ project.date | htmlDateString }}">{{ project.date | readableDate }}</time>
+            {# {% for tag in project.data.tags | filterTagList %} #}
+            {% for tag in project.data.tags %}
+            {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+            <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+            {% endfor %}
+        </li>
+    </ul>
+</div>

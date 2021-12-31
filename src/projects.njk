@@ -1,0 +1,19 @@
+---
+title: "Projects & Writing"
+layout: "layouts/base.njk"
+permalink: "projects/"
+eleventyNavigation:
+  key: Projects
+  order: 2
+---
+
+<p>A selection of projects and writing done for work, school, or because I felt like it.</p>
+
+<div class="bragdoc__section" id="bragdoc__section">
+  {% for project in collections.projects | reverse %}
+    {% if project.data.public %}
+      {% include 'partials/project-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>
+
