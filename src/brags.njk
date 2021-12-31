@@ -7,20 +7,19 @@ eleventyNavigation:
   order: 4
 ---
 
-<div class="bragdoc__section" id="bragdoc__section">
 {# <h1 class="bragdoc__header">{{ title }}</h1> #}
-<div class="bragdoc__container">
-  <div class="bragdoc__profile">
-    <img class="bragdoc__photo" src="{{ '/images/lee.jpg' | url }}" style="width: 150px;">
-    <h1 class="bragdoc__name">{{ data.myname }}</h1>
-    <div class="role">{{ data.myrole }}</div>
+<div>
+  <div>
+    <img src="{{ '/images/lee.jpg' | url }}" style="width: 150px;">
+    <h2>{{ data.myname }}</h2>
+    <div>{{ data.myrole }}</div>
 
     <p>Blah blah bio here</p>
 
-    <h1>Brag Document</h1>
-    <h2>What's a Brag Document?</h2>
-    <blockquote>The tactic is pretty simple! Instead of trying to remember everything you did with your brain, maintain a “brag document” that lists everything so you can refer to it when you get to performance review season! This is a pretty common tactic – when I started doing this I mentioned it to more experienced people and they were like "oh yeah, I’ve been doing that for a long time, it really helps".<br /> 
-    Where I work we call this a “brag document” but I’ve heard other names for the same concept like "hype document" or "list of stuff I did" :).<br />
+    <h2>Brag Document</h2>
+    <h3>What's a Brag Document?</h3>
+    <blockquote>Instead of trying to remember everything you did with your brain, maintain a "brag document" that lists everything so you can refer to it when you get to performance review season! This is a pretty common tactic – when I started doing this I mentioned it to more experienced people and they were like "oh yeah, I’ve been doing that for a long time, it really helps".<br /> 
+    Where I work we call this a "brag document" but I’ve heard other names for the same concept like "hype document" or "list of stuff I did" :).<br />
     - Julia Evans: <a target="_blank" href="https://jvns.ca/blog/brag-documents/">Get your work recognized: write a brag document</a></blockquote>
 
 {% for brag in collections.brags | reverse %}
@@ -30,5 +29,4 @@ eleventyNavigation:
 {% endfor %}
   </div>
 
-</div>
 </div>

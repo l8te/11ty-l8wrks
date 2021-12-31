@@ -1,19 +1,17 @@
 ---
-title: "Projects & Writing"
+title: "Gallery"
 layout: "layouts/base.njk"
-permalink: "projects/"
+permalink: "gallery/"
 eleventyNavigation:
-  key: Projects
-  order: 2
+  key: Gallery
+  order: 3
 ---
 
-<p>A selection of projects and writing done for work, school, or because I felt like it.</p>
-
 <div>
+hello - i dont know why this won't work with the "arts" collection
   {% for project in collections.projects | reverse %}
     {% if project.data.public %}
       {% include 'partials/project-entry.njk' %}
     {% endif %}
   {% endfor %}
 </div>
-
