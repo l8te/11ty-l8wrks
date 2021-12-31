@@ -10,6 +10,7 @@ eleventyNavigation:
 <p>Analog and digital art.</p>
 
 <h2>Shows</h2>
+{# might be able to merge this in with the other arts? #}
 <div>
   {% for show in collections.shows | reverse %}
     {% if show.data.public %}
@@ -22,4 +23,12 @@ eleventyNavigation:
 
 <h2>Analog</h2>
 
-<h2>Digial</h2>
+<h2>Digital</h2>
+<div>
+  {% for art in collections.arts | reverse %}
+    {% if art.data.public %}
+{# {% if art.data.tags = 'digital' %} #}      
+      {% include 'partials/art-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>
