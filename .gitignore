@@ -105,3 +105,6 @@ dist
 
 # images
 *.jpg
+
+# public
+public
