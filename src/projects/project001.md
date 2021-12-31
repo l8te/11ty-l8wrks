@@ -2,7 +2,7 @@
 title: UFO sightings and science fiction movies - an analysis
 description: Thinkful Data Analytics capstone project
 date: 2021-07-12
-tags: [ 'projects', 'data analysis' ]
+tags: [ 'data analysis' ]
 layout: layouts/page.njk
 eleventyNavigation:
   key: UFO sightings and science fiction movies - an analysis

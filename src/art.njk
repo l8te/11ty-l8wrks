@@ -1,0 +1,25 @@
+---
+title: "Art"
+layout: "layouts/base.njk"
+permalink: "art/"
+eleventyNavigation:
+  key: Art
+  order: 2
+---
+
+<p>Analog and digital art.</p>
+
+<h2>Shows</h2>
+<div>
+  {% for show in collections.shows | reverse %}
+    {% if show.data.public %}
+      {% include 'partials/show-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{# these two can go in the same directory and filter by analog or digital #}
+
+<h2>Analog</h2>
+
+<h2>Digial</h2>

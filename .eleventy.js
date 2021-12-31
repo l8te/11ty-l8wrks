@@ -2,12 +2,12 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
+  // add plugins
   eleventyConfig.addPlugin(pluginNavigation);
 
-  // Add filter
-  // dates are off by 1 day
-  // eleventyConfig.addFilter("dateDisplay", require("./src/_filters/dates.js") );
-
+  // https://www.11ty.dev/docs/data-deep-merge/
+  eleventyConfig.setDataDeepMerge(true);
+  
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });

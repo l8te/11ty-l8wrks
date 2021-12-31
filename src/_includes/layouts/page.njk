@@ -5,8 +5,8 @@ layout: "layouts/base.njk"
 <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
 <br/>
 {{ content | safe }}
-<img src="../../images/{{ imageName }}" alt="{{ description }}" width="600px">
-
+<img src="../../../images/{{ imageName }}" alt="{{ description }}" width="600px">
+<br />
 {% for tag in tags %}
 	{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
 	<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
