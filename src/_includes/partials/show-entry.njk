@@ -4,14 +4,14 @@
             <h3><a href="{{ show.url | url }}" class="postlist-link">{% if show.data.title %}{{ show.data.title }}{% else %}<code>{{ show.url }}</code>{% endif %}</a></h3>
             <time datetime="{{ show.date | htmlDateString }}">{{ show.date | readableDate }}</time>
             <br />
-            <p>{{ show.data.description | safe }}</p>
+            {# <p>{{ show.data.description | safe }}</p> #}
             <img src="../../../images/{{ show.data.imageName }}" alt="{{ show.data.description }}" width="100px">
             <br />
-            {# {% for tag in show.data.tags | filterTagList %} #}
-            {% for tag in show.data.tags %}
+
+            {# {% for tag in show.data.tags | filterTagList%}
             {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
             <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-            {% endfor %}
+            {% endfor %} #}
         </li>
     </ul>
 </div>

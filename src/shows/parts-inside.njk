@@ -1,15 +1,23 @@
 ---
 title: " PARTS INSIDE "
 description: 2019 show at The Living Gallery - Brooklyn, NY
-date: 2020-01-13
-tags: [ 'analog', 'painting' ]
-layout: layouts/page.njk
+date: 2019-12-03
+tags: 
+layout: layouts/base.njk
 eleventyNavigation:
-  key: Sleep Debtor
-  parent: Projects
-permalink: "art/shows/{{ title | slug }}/"
+  key: Parts Inside
+  parent: Art
+permalink: "art/{{ title | slug }}/"
 imageName: partsInside.png
 public: True
 ---
 
-Voodoo god shrine-ware shoes Shibuya range-rover rebar refrigerator hacker order-flow tanto. Cyber-spook denim rifle boat jeans shoes engine computer drugs marketing receding bridge hotdog footage render-farm cardboard. 
+{{ description }}
+
+<div>
+  {% for show in collections['parts inside'] | reverse %}
+    {% if show.data.public %}
+      {% include 'partials/show-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>

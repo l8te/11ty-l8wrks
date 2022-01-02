@@ -1,5 +1,5 @@
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { DateTime } = require("luxon");
+const pluginNavigation = require('@11ty/eleventy-navigation');
+const { DateTime } = require('luxon');
 
 module.exports = function(eleventyConfig) {
   // add plugins
@@ -8,8 +8,8 @@ module.exports = function(eleventyConfig) {
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
   
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+  eleventyConfig.addFilter('readableDate', dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd LLL yyyy');
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
@@ -17,16 +17,34 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
-  eleventyConfig.addWatchTarget("./src/css/")
-  eleventyConfig.addWatchTarget("./src/images/")
-  eleventyConfig.addPassthroughCopy("./src/css/")
-  eleventyConfig.addPassthroughCopy("./src/images/")
+  // setting up tags
+  function filterTagList(tags) {
+    return (tags || []).filter(tag => ['all', 'nav', 'post', 'posts', 'projects', 'arts', 'brags'].indexOf(tag) === -1);
+  }
+
+  eleventyConfig.addFilter('filterTagList', filterTagList)
+
+  // Create an array of all tags
+  eleventyConfig.addCollection('tagList', function(collection) {
+    let tagSet = new Set();
+    collection.getAll().forEach(item => {
+      (item.data.tags || []).forEach(tag => tagSet.add(tag));
+    });
+
+    return filterTagList([...tagSet]);
+  });
+
+
+  eleventyConfig.addWatchTarget('./src/css/')
+  eleventyConfig.addWatchTarget('./src/images/')
+  eleventyConfig.addPassthroughCopy('./src/css/')
+  eleventyConfig.addPassthroughCopy('./src/images/')
 
   return {
     dir: {
-      input: "src",
-      output: "public"
+      input: 'src',
+      output: 'public'
     },
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: 'njk'
   }
 }

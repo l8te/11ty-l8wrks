@@ -7,8 +7,8 @@
             <p>{{ art.data.description | safe }}</p>
             <img src="../../../images/{{ art.data.imageName }}" alt="{{ art.data.description }}" width="100px">
             <br />
-            {# {% for tag in art.data.tags | filterTagList %} #}
-            {% for tag in art.data.tags %}
+
+            {% for tag in art.data.tags | filterTagList%}
             {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
             <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
             {% endfor %}

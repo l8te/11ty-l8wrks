@@ -7,8 +7,6 @@ eleventyNavigation:
   order: 2
 ---
 
-<p>Analog and digital art.</p>
-
 <h2>Shows</h2>
 {# might be able to merge this in with the other arts? #}
 <div>
@@ -19,15 +17,20 @@ eleventyNavigation:
   {% endfor %}
 </div>
 
-{# these two can go in the same directory and filter by analog or digital #}
-
 <h2>Analog</h2>
+<div>
+  {% for art in collections.analog | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 <h2>Digital</h2>
+{# need to filter by digital #}
 <div>
-  {% for art in collections.arts | reverse %}
+  {% for art in collections.digital | reverse %}
     {% if art.data.public %}
-{# {% if art.data.tags = 'digital' %} #}      
       {% include 'partials/art-entry.njk' %}
     {% endif %}
   {% endfor %}
