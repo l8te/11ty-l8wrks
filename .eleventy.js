@@ -34,6 +34,8 @@ module.exports = function(eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
+  // shortcode for year in footer
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addWatchTarget('./src/css/')
   eleventyConfig.addWatchTarget('./src/images/')

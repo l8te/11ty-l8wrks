@@ -9,5 +9,6 @@ eleventyNavigation:
   parent: Parts Insde
 permalink: "art/parts-inside/{{ title | slug }}/"
 imageName: IMG_20200802_0010.png
+hasImage: True
 public: True
 ---

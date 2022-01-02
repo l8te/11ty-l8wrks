@@ -9,6 +9,7 @@ eleventyNavigation:
   parent: Projects
 permalink: "projects/{{ title | slug }}/"
 imageName: ace-guide.jpg
+hasImage: True
 public: True
 ---
 

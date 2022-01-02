@@ -3,24 +3,28 @@ layout: "layouts/base.njk"
 ---
 
 {# next/prev post in collection?? #}
-<p>Partent page: {{ eleventyNavigation.parent }}</p>
+<p>Parent page: {{ eleventyNavigation.parent }}</p>
 
 <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
 <br/>
-{{ content | safe }}
-<img src="../../../images/{{ imageName }}" alt="{{ description }}" width="600px">
-<br />
+
+<p>{{ content | safe }}</p>
+
+{% if hasImage %}
+<img src="../../../images/{{ imageName }}" alt="{{ description }}" width="25%">
+{% endif %}
+
 {% for tag in tags %}
 	{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
 	<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
 {% endfor %}
 
 {# get other items with same parent page #}
-{%- if collections.posts %}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+<p>Previous and Next nav, needs to be fixed</p>
+{%- if collections.all %}
+{%- set nextPost = collections.all | getNextCollectionItem(page) %}
+{%- set previousPost = collections.all | getPreviousCollectionItem(page) %}
 {%- if nextPost or previousPost %}
-<hr>
 <ul>
   {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
   {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}

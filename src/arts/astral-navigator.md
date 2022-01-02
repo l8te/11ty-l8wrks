@@ -9,5 +9,6 @@ eleventyNavigation:
   parent: Sleep Debtor
 permalink: "art/sleep-debtor/{{ title | slug }}/"
 imageName: sb_194831.jpg
+hasImage: True
 public: True
 ---

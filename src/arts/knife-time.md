@@ -9,5 +9,6 @@ eleventyNavigation:
   parent: Parts Insde
 permalink: "art/parts-inside/{{ title | slug }}/"
 imageName: knife-time.png
+hasImage: True
 public: True
 ---
