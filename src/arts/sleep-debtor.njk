@@ -1,13 +1,11 @@
 ---
 title: Sleep Debtor
+parent: Art
 description: 2020 show at Stumptown Coffee Roasters - Brooklyn, NY
 date: 2020-01-13
-tags: 
+tags: [ 'shows' ]
 layout: layouts/base.njk
-eleventyNavigation:
-  key: Sleep Debtor
-  parent: Art
-permalink: "art/{{ title | slug }}/"
+permalink: "{{ parent | slug }}/{{ title | slug }}/"
 imageName: sleepDebtor.png
 public: True
 ---
@@ -15,9 +13,9 @@ public: True
 {{ description }}
 
 <div>
-  {% for show in collections['sleep debtor'] | reverse %}
-    {% if show.data.public %}
-      {% include 'partials/show-entry.njk' %}
+  {% for art in collections['sleep debtor'] | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
     {% endif %}
   {% endfor %}
 </div>

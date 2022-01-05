@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <h2>Shows</h2>
-{# might be able to merge this in with the other arts? #}
+{# consider combing this partial with art-entry.njk #}
 <div>
   {% for show in collections.shows | reverse %}
     {% if show.data.public %}
@@ -19,7 +19,7 @@ eleventyNavigation:
 
 <h2>Analog</h2>
 <div>
-  {% for art in collections.potato | reverse %}
+  {% for art in collections.analog | reverse %}
     {% if art.data.public %}
       {% include 'partials/art-entry.njk' %}
     {% endif %}

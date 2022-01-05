@@ -16,7 +16,7 @@
     {{ content | safe }}
 
     {# open external links in new tabs #}
-    <script>
+   {#  <script>
     (function () {
       const links = document.querySelectorAll("a[href^='https://'], a[href^='http://']")
       const host = window.location.hostname
@@ -30,7 +30,18 @@
         link.setAttribute("rel", "noopener")
       })
     })()
-    </script>
-</body>
+    </script> #}
+
     {% include 'partials/footer.njk' %}
+
+    <hr />
+    <p>page dump for debug</p>
+    <ul>
+      {% for post in collections.projects %}
+      <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+      {% endfor %}
+    </ul>
+
+</body>
+    
 </html>
