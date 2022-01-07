@@ -3,7 +3,7 @@ layout: "layouts/base.njk"
 ---
 
 {# next/prev post in collection?? #}
-<p>Parent page: {{ eleventyNavigation.parent }}</p>
+<p>Parent page: {{ parent }}</p>
 
 <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
 <br/>

@@ -1,19 +1,50 @@
 <h2>prev + next links</h2>
 
-<p>nav key: {{ eleventyNavigation.key }}</p>
-<p>nav parent: {{ eleventyNavigation.parent }}</p>
+{# <p>nav key: {{ key }}</p> #}
+<p>nav parent: {{ parent | lower }}</p>
 <p>tags: {{ tags }}</p>
 
+The problem is that the parent isn't added to the tags/can't access parent as a collection
+
+{# possible help?? https://github.com/11ty/eleventy/issues/259 #}
+
+{# gets all in parent group #}
+<ul>
+  {% for post in collections.all %}
+    {% if parent == post.data.parent %}
+      <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
 {# get other items with same parent page #}
-<p>Previous and Next nav, needs to be fixed</p>
+{% if collections['parent'] %}
+  {# this seems to be passing the parent value in, but to match it to the tag it needs to be lowercase?? #}
+{% set nextPost = collections['parent'] | getNextCollectionItem(page) %}
+{% set previousPost = collections['parent'] | getPreviousCollectionItem(page) %}
+{% if nextPost or previousPost %}
+<ul>
+
+  {% if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+  {% if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+
+</ul>
+{% endif %}
+{% endif %} 
+
+
+<hr>
+<p>original code</p>
+{# get other items with same parent page #}
 {% if collections.all %}
 {% set nextPost = collections.all | getNextCollectionItem(page) %}
 {% set previousPost = collections.all | getPreviousCollectionItem(page) %}
 {% if nextPost or previousPost %}
 <ul>
+
   {% if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
   {% if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+
 </ul>
 {% endif %}
 {% endif %} 
