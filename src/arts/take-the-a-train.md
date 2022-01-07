@@ -3,7 +3,7 @@ title: Take the A Train (the A is for Anxiety)
 parent: Sleep Debtor
 description: Acyrlic and paint marker on wood, for the show Sleep Debtor
 date: 2021-07-12
-tags: [ 'painting', 'sleep debtor' ]
+tags: [ 'painting' ]
 layout: layouts/page.njk
 permalink: "art/{{ parent | slug }}/{{ title | slug }}/"
 imageName: 188490.jpg
