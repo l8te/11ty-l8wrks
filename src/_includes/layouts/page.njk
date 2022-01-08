@@ -1,7 +1,7 @@
 ---
 layout: "layouts/base.njk"
 ---
-
+<em>this is using page.njk</em>
 {# next/prev post in collection?? #}
 <p>Parent page: {{ parent }}</p>
 
@@ -19,4 +19,4 @@ layout: "layouts/base.njk"
 	<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
 {% endfor %}
 
-{% include 'partials/prev-next.njk' %}
+{# {% include 'partials/prev-next.njk' %} #}

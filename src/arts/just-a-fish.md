@@ -4,7 +4,7 @@ parent: Analog
 description: Painting of a fish on a paper bag, acrylic paint and paint marker
 date: 2021-07-12
 tags: [ 'analog', 'aquatic life', 'painting' ]
-layout: layouts/page.njk
+layout: layouts/artPage.njk
 permalink: "art/{{ parent | slug }}/{{ title | slug }}/"
 imageName: IMG_20200802_0006.jpg
 hasImage: True

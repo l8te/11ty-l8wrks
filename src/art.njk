@@ -8,14 +8,26 @@ eleventyNavigation:
 ---
 
 <h2>Shows</h2>
-{# consider combing this partial with art-entry.njk #}
-<div>
-  {% for show in collections.shows | reverse %}
-    {% if show.data.public %}
-      {% include 'partials/show-entry.njk' %}
+  <h3>Sleep Debtor</h3>
+  <p>Some text about this show that I did</p>
+  <div>
+  {% for art in collections['sleep debtor'] | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
     {% endif %}
   {% endfor %}
-</div>
+  </div>
+
+  <h3>" PARTS INSIDE "</h3>
+  <p>Some text about this show that I did</p>
+  <div>
+  {% for art in collections['parts inside'] | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+  </div>
+
 
 <h2>Analog</h2>
 <div>
@@ -25,9 +37,7 @@ eleventyNavigation:
     {% endif %}
   {% endfor %}
 </div>
-
 <h2>Digital</h2>
-{# need to filter by digital #}
 <div>
   {% for art in collections.digital | reverse %}
     {% if art.data.public %}
@@ -35,3 +45,21 @@ eleventyNavigation:
     {% endif %}
   {% endfor %}
 </div>
+
+<h2>Or, just everything:</h2>
+<div>
+  {% for art in collections.arts | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{# old code #}
+{# <div>
+  {% for art in collections.digital | reverse %}
+    {% if art.data.public %}
+      {% include 'partials/art-entry.njk' %}
+    {% endif %}
+  {% endfor %}
+</div> #}

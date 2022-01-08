@@ -4,7 +4,7 @@ parent: Projects
 description: A LibGuide created for 530 Search and the Information Landscape at Rutgers
 date: 2021-12-05
 tags: [ 'libguide' ]
-layout: layouts/page.njk
+layout: layouts/projectPage.njk
 permalink: "{{ parent | slug }}/{{ title | slug }}/"
 imageName: ace-guide.jpg
 hasImage: True
