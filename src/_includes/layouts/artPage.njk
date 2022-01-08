@@ -19,7 +19,8 @@ layout: "layouts/base.njk"
 	<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
 {% endfor %}
 
-{# get prev/next in projects #}
+{# ser this to get posts by correct tag #}
+{# get prev/next in arts #}
 {% if collections.arts %}
 {% set nextPost = collections.arts | getNextCollectionItem(page) %}
 {% set previousPost = collections.arts | getPreviousCollectionItem(page) %}
