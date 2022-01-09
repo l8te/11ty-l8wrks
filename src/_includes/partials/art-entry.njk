@@ -1,17 +1,14 @@
-<div>
-    <ul>
-        <li class="postlist-item{% if art.url == url %} artlist-item-active{% endif %}">
-            <h3><a href="{{ art.url | url }}" class="postlist-link">{% if art.data.title %}{{ art.data.title }}{% else %}<code>{{ art.url }}</code>{% endif %}</a></h3>
-            {# <time datetime="{{ art.date | htmlDateString }}">{{ art.date | readableDate }}</time>
-            <br /> #}
-            <p>{{ art.data.description | safe }}</p>
-            <img src="../../../images/{{ art.data.imageName }}" alt="{{ art.data.description }}" width="100px">
-            <br />
+<h3 class="postlist-item{% if art.url == url %} artlist-item-active{% endif %}">
+    <a href="{{ art.url | url }}" class="postlist-link">{% if art.data.title %}{{ art.data.title }}{% else %}<code>{{ art.url }}</code>{% endif %}</a>
+</h3>
 
-            {% for tag in art.data.tags | filterTagList %}
-            {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-            <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-            {% endfor %}
-        </li>
-    </ul>
-</div>
+{# <time datetime="{{ art.date | htmlDateString }}">{{ art.date | readableDate }}</time> #}
+{# <p>{{ art.data.description | safe }}</p> #}
+<figure>
+    <img src="../../../images/{{ art.data.imageName }}" alt="{{ art.data.description }}" width="100px">
+</figure>
+
+{% for tag in art.data.tags | filterTagList %}
+{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+{% endfor %}

@@ -1,9 +1,7 @@
 <div>
-  <div></div>
   <div>
-  <time datetime="{{ brag.data.date | htmlDateString }}">{{ brag.data.date | readableDate }}</time>
-    <br/>
     <h2><span>{{ brag.data.icon }}</span> {{ brag.data.title }}</h2>
+    <time datetime="{{ brag.data.date | htmlDateString }}" class="text-500 gap-right-300 color-secondary"><em>{{ brag.data.date | readableDate }}</em></time>
     <div>
         {{ brag.templateContent | safe }}
     </div>

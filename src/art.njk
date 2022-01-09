@@ -11,50 +11,70 @@ eleventyNavigation:
   <h3>Sleep Debtor</h3>
   {# use show name as link to tag?? #}
   <p>Some text about this show that I did</p>
-  <div>
-  {% for art in collections['sleep debtor'] | reverse %}
+  <div class="wrapper">
+    <ul class="auto-grid image-grid">
+    {% for art in collections['sleep debtor'] | reverse %}
     {% if art.data.public %}
+      <li>
       {% include 'partials/art-entry.njk' %}
+      </li>
     {% endif %}
-  {% endfor %}
+    {% endfor %}
+    </ul>
   </div>
 
   <h3>" PARTS INSIDE "</h3>
   <p>Some text about this show that I did</p>
-  <div>
-  {% for art in collections['parts inside'] | reverse %}
+  <div class="wrapper">
+    <ul class="auto-grid image-grid">
+    {% for art in collections['parts inside'] | reverse %}
     {% if art.data.public %}
+      <li>
       {% include 'partials/art-entry.njk' %}
+      </li>
     {% endif %}
-  {% endfor %}
+    {% endfor %}
+    </ul>
   </div>
 
-
 <h2>Analog</h2>
-<div>
-  {% for art in collections.analog | reverse %}
+  <div class="wrapper">
+    <ul class="auto-grid image-grid">
+    {% for art in collections.analog | reverse %}
     {% if art.data.public %}
+      <li>
       {% include 'partials/art-entry.njk' %}
+      </li>
     {% endif %}
-  {% endfor %}
-</div>
+    {% endfor %}
+    </ul>
+  </div>
+
 <h2>Digital</h2>
-<div>
-  {% for art in collections.digital | reverse %}
+  <div class="wrapper">
+    <ul class="auto-grid image-grid">
+    {% for art in collections.digital | reverse %}
     {% if art.data.public %}
+      <li>
       {% include 'partials/art-entry.njk' %}
+      </li>
     {% endif %}
-  {% endfor %}
-</div>
+    {% endfor %}
+    </ul>
+  </div>
 
 <h2>Or, just everything:</h2>
-<div>
-  {% for art in collections.arts | reverse %}
+  <div class="wrapper">
+    <ul class="auto-grid image-grid">
+    {% for art in collections.all | reverse %}
     {% if art.data.public %}
+      <li>
       {% include 'partials/art-entry.njk' %}
+      </li>
     {% endif %}
-  {% endfor %}
-</div>
+    {% endfor %}
+    </ul>
+  </div>
 
 {# old code #}
 {# <div>

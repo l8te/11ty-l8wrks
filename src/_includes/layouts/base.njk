@@ -7,13 +7,15 @@
     <title>{{ title }}</title>
     {# need to update css to expand to the whole site #}
     {# <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"> #}
-    <link rel="stylesheet" href="{{ '/css/new.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/global.css' | url }}">
 </head>
 
-<body style="background-color: #111; color: #ccc; font-family: sans-serif;">
+<body>
   {% include 'partials/nav.njk' %}
-  
-  <em>this is using base.njk</em>
+  <article class="[ post ] [ flow ]">
+
+
+  {# <em>this is using base.njk</em> #}
 
     <h1>{{ title }}</h1>
     <p>{{ content | safe }}</p>
@@ -34,17 +36,17 @@
       })
     })()
     </script>
-
+  </article>
     {% include 'partials/footer.njk' %}
 
-    <hr />
+   {#  <hr />
     <p>page dump for debug</p>
     <ul>
       {% for post in collections.all %}
       <li><a href="{{ post.url }}">{{ post.url }}</a></li>
       {% endfor %}
     </ul>
-
+ #}
 </body>
     
 </html>

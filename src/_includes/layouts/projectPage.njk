@@ -1,17 +1,21 @@
 ---
 layout: "layouts/base.njk"
 ---
-<em>this is using projectPage.njk</em>
-{# next/prev post in collection?? #}
-<p>Parent page: {{ parent }}</p>
+{# <em>this is using projectPage.njk</em> #}
 
-<time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-<br/>
+<time datetime="{{ date | htmlDateString }}" class="text-500 gap-right-300 color-secondary"><em>{{ date | readableDate }}</em></time>
 
 <p>{{ content | safe }}</p>
 
 {% if hasImage %}
-<img src="../../../images/{{ imageName }}" alt="{{ description }}" width="25%">
+	<figure>
+		<img src="../../../images/{{ imageName }}" alt="{{ description }}">
+		<figcaption class="measure-medium text-400">
+          <p>
+   			{{ description }}
+          </p>
+        </figcaption>
+	</figure>
 {% endif %}
 
 {% for tag in tags | filterTagList%}
