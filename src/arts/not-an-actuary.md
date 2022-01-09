@@ -1,12 +1,12 @@
 ---
-title: The Death of Captain Howlett
+title: Not an Actuary
 parent: Digital
-description: Sunless Sea fanart 
+description: Illustration for a personal project
 date: 2021-07-12
-tags: [ 'digital', 'fanart' ]
+tags: [ 'digital', 'bb', 'space' ]
 layout: layouts/artPage.njk
 permalink: "art/{{ parent | slug }}/{{ title | slug }}/"
-imageName: howlett_sunless.png
+imageName: notAnActuary_flats.png
 hasImage: True
 public: True
 ---

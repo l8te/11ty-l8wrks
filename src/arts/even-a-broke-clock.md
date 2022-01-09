@@ -1,12 +1,12 @@
 ---
-title: 9 out of 10 (Doctors Agree)
+title: Even a Broke Clock
 parent: Parts Insde
 description: Acyrlic and paint marker on cardboard
 date: 2021-07-12
-tags: [ 'painting', 'parts inside', 'plants' ]
+tags: [ 'painting', 'parts inside', 'plants', 'bottles', 'keys', 'time' ]
 layout: layouts/artPage.njk
 permalink: "art/{{ parent | slug }}/{{ title | slug }}/"
-imageName: IMG_20200802_0010.png
+imageName: partsInside_Scan04.jpg
 hasImage: True
 public: True
 ---

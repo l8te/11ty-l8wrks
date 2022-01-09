@@ -19,7 +19,7 @@
     <p>{{ content | safe }}</p>
 
     {# open external links in new tabs #}
-   {#  <script>
+    <script>
     (function () {
       const links = document.querySelectorAll("a[href^='https://'], a[href^='http://']")
       const host = window.location.hostname
@@ -33,7 +33,7 @@
         link.setAttribute("rel", "noopener")
       })
     })()
-    </script> #}
+    </script>
 
     {% include 'partials/footer.njk' %}
 

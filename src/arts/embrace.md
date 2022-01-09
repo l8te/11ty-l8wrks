@@ -1,12 +1,12 @@
 ---
-title: The Death of Captain Howlett
+title: Embrace
 parent: Digital
-description: Sunless Sea fanart 
+description: Illustration for a personal project
 date: 2021-07-12
-tags: [ 'digital', 'fanart' ]
+tags: [ 'digital', 'bb', 'bugs', 'space' ]
 layout: layouts/artPage.njk
 permalink: "art/{{ parent | slug }}/{{ title | slug }}/"
-imageName: howlett_sunless.png
+imageName: roach_colors.png
 hasImage: True
 public: True
 ---
