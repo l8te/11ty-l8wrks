@@ -1,7 +1,6 @@
 <h3 class="postlist-item{% if art.url == url %} artlist-item-active{% endif %}">
     <a href="{{ art.url | url }}" class="postlist-link">{% if art.data.title %}{{ art.data.title }}{% else %}<code>{{ art.url }}</code>{% endif %}</a>
 </h3>
-
 {# <time datetime="{{ art.date | htmlDateString }}">{{ art.date | readableDate }}</time> #}
 {# <p>{{ art.data.description | safe }}</p> #}
 <figure>

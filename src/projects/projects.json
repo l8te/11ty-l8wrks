@@ -1,4 +1,6 @@
 {
   "tags": ["projects"],
-  "permalink": true
+  "permalink": true,
+  "layout": "layouts/projectPage.njk",
+  "permalink": "{{ parent | slug }}/{{ title | slug }}/"
 }

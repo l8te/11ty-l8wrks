@@ -4,8 +4,6 @@ parent: Projects
 description: Thinkful Data Analytics capstone project
 date: 2021-07-12
 tags: [ 'data analysis' ]
-layout: layouts/projectPage.njk
-permalink: "{{ parent | slug }}/{{ title | slug }}/"
 imageName:
 hasImage: False
 public: True

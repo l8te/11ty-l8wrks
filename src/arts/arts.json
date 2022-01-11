@@ -1,4 +1,6 @@
 {
   "tags": ["arts"],
-  "permalink": true
+  "permalink": true,
+  "layout": "layouts/artPage.njk",
+  "permalink": "art/{{ parent | slug }}/{{ title | slug }}/"
 }
