@@ -1,9 +1,9 @@
 ---
-title: It Could be Easy
-parent: Parts Insde
-description: Acyrlic and paint marker on cardboard
-date: 2020-03-12
-tags: [ 'painting', 'parts inside' ]
+title: Couldn't it Be Easy
+parent: Parts Inside
+description: Acrylic  on cardboard, 6 x 6 in.
+date: 2019-12-03
+tags: [ 'knives', 'plants', 'parts inside' ]
 imageName: knife-time.png
 hasImage: True
 public: True
